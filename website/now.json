@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "react-spring-flip",
+  "build": {
+    "env": {
+      "NPM_TOKEN": "@npm-token"
+    }
+  },
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    }
+  ]
+}

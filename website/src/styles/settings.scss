@@ -1,0 +1,27 @@
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Volkhov');
+
+$font-size:          1rem !default;
+$font-size-lg:       2.125rem !default;
+$font-size-sm:       .80rem !default;
+$font-family-base: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif: 'Volkhov';
+$font-family-sans-serif: 'IBM Plex Sans';
+$font-family-mono: 'IBM Plex Mono';
+
+
+
+/**
+ This is for forms
+ */
+$input-height-lg: calc(3.375rem + 2px);
+$input-padding-y: 0.9375rem;
+$input-padding-x: 0.9375rem;
+$input-padding-x-lg: 1.4rem;
+

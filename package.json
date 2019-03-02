@@ -1,0 +1,64 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "A library to help you use react-intl with code-splitting",
+  "main": ".eslintrc.js",
+  "private": true,
+  "scripts": {
+    "ci:prepublish": "lerna run ci:prepublish",
+    "ci:version": "lerna version --conventional-commits --yes",
+    "ci:publish": "lerna publish from-git --yes",
+    "commit": "git cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "homepage": "https://github.com/morgs32/render-i18n#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morgs32/render-i18n.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morgs32/render-i18n/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz-config.js"
+    }
+  },
+  "workspaces": {
+    "packages": [
+      "main",
+      "website"
+    ],
+    "nohoist": [
+      "**/bootstrap",
+      "@babel/**"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.3",
+    "@commitlint/config-conventional": "^6.1.3",
+    "babel-eslint": "^8.2.3",
+    "commitizen": "^2.9.6",
+    "cz-customizable": "^5.2.0",
+    "cz-lerna-changelog": "^1.2.1",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-react-app": "^3.0.5",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.59.0",
+    "husky": "^0.14.3",
+    "lerna": "^3.4.0"
+  }
+}
