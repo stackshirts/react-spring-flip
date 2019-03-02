@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.4.2 (2019-03-02)
+
+**Note:** Version bump only for package react-spring-flip
+
+
+
+
+
 ## [1.4.1](https://github.com/morgs32/render-i18n/compare/lazy-react-intl@1.4.0...lazy-react-intl@1.4.1) (2019-02-26)
 
 
