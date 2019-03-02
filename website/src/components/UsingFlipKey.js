@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
-import ReactMarkdown from 'react-markdown'
-import template from 'lodash/template'
+import Markdown from 'src/components/Markdown'
 import Code from 'src/components/Code'
 import PageView from 'react-merge-metrics/lib/PageView'
 import { Flipper, Flip } from 'react-spring-flip'
@@ -40,19 +39,8 @@ export default function Index(props) {
   }, [])
 
   return (
-    <div>
+    <>
 
-      <PageView
-        name="Index"
-      />
-
-      <h1 className="display-4 mb-3">
-        On mount/unmount
-      </h1>
-
-      <p className="lead mb-5">
-        A library to help you do flip animations on top of react-spring
-      </p>
 
       <button
         onClick={shuffleCards}
@@ -61,11 +49,10 @@ export default function Index(props) {
         Shuffle
       </button>
 
-      <Flipper>
-        <div
-          key={flipCount}
-          className="row"
-        >
+      <Flipper
+        flipKey={flipCount}
+      >
+        <div className="row">
           {cards.map((card) => {
             return (
               <Flip
@@ -89,7 +76,7 @@ export default function Index(props) {
         </div>
       </Flipper>
 
-    </div>
+    </>
   )
 }
 

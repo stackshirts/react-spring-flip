@@ -22,13 +22,13 @@ export default withRouter(class Sidebar extends Component {
           style={{
             color: 'white'
           }}
-          className="card-body bg-dark serif"
+          className="card-body bg-primary serif"
         >
           <Link
             href="/"
           >
             <a className="text-white">
-              React merge down
+              React spring flip
             </a>
           </Link>
         </div>
@@ -37,58 +37,18 @@ export default withRouter(class Sidebar extends Component {
         >
           <ul>
             <li>
-              <Link href="/how-it-works">
+              <Link href="/#using-flipkey">
                 <a>
-                  How it works
+                  Using flipKey
                 </a>
               </Link>
             </li>
             <li>
-              <Link href="/components">
+              <Link href="/#on-mount-unmount">
                 <a>
-                  Components
+                  On mount/unmount
                 </a>
               </Link>
-            </li>
-            <li className="p-0">
-              <ul className="ml-3">
-                <li>
-                  <Link href="/components#metrics-provider">
-                    <a>
-                      MetricsProvider
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/components#add-properties">
-                    <a>
-                      AddProperties
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/components#pageview">
-                    <a>
-                      PageView
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/components#connect-metrics">
-                    <a>
-                      connectMetrics
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/components#render-metrics">
-                    <a>
-                      RenderMetrics
-                    </a>
-                  </Link>
-                </li>
-
-              </ul>
             </li>
           </ul>
         </nav>

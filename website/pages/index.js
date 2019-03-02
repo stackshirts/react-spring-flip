@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
-import ReactMarkdown from 'react-markdown'
-import template from 'lodash/template'
+import Markdown from 'src/components/Markdown'
 import Code from 'src/components/Code'
 import PageView from 'react-merge-metrics/lib/PageView'
-import { Flipper, Flip } from 'react-spring-flip'
 import _shuffle from 'lodash/shuffle'
+import UsingFlipKey from 'src/components/UsingFlipKey'
+import OnMountUnmount from 'src/components/OnMountUnmount'
 
 Index.propTypes = {}
 Index.defaultProps = {}
@@ -29,12 +29,6 @@ const cardsData = [
   },
 ]
 
-export const isBrowser = !!(
-  (typeof window !== 'undefined' &&
-   window.document && window.document.createElement)
-)
-
-
 export default function Index(props) {
 
   const [cards, setCards] = useState(cardsData)
@@ -57,43 +51,76 @@ export default function Index(props) {
       </h1>
 
       <p className="lead mb-5">
-        A library to help you do flip animations on top of react-spring
+        A library to help you do flip animations.
+        It uses
+        {' '}
+        <a href="https://github.com/react-spring/react-spring">
+          <code>
+            react-spring
+          </code>
+        </a>
+        {' '}
+        under the hood and requires react hooks (v16.8 or greater).
       </p>
 
-      <button
-        onClick={shuffleCards}
-        className="btn btn-primary mb-3"
-      >
-        Shuffle
-      </button>
 
-      <Flipper
-        flipKey={flipCount}
-      >
-        <div className="row">
-          {cards.map((card) => {
-            return (
-              <Flip
-                positionOnly
-                flipId={card.id}
-                key={card.background}
-                className="col-6 mb-2"
-              >
-                <div className="card">
-                  <div
-                    style={{
-                      background: card.background
-                    }}
-                    className="card-body"
-                  >
-                  </div>
-                </div>
-              </Flip>
-            )
-          })}
-        </div>
-      </Flipper>
+      <h2 className="mb-4">
+        Examples
+      </h2>
 
+      <section className="mb-5">
+
+        <h3
+          id="using-flipkey"
+          className="mb-4"
+        >
+          Using
+          {' '}
+          <code>
+            flipKey
+          </code>
+        </h3>
+
+
+        <Markdown>
+          The button will shuffle the cards and increment `flipCount` (in component state).
+          We use the `flipKey` property on the `Flipper` component to tell it
+          animate the transition between one layout and the next.
+        </Markdown>
+
+        <Code className="mb-4">
+          {require('src/markdown/FlipKeyExample.md')}
+        </Code>
+
+        <UsingFlipKey />
+
+      </section>
+
+      <section className="mb-5">
+
+        <h3
+          id="on-mount-unmount"
+          className="mb-4"
+        >
+          On mount/unmount
+        </h3>
+
+
+        <Markdown>
+          In this example, we pretend we have two completely different DOM trees to render,
+          by changing the `key` on the parent div container. If we DO NOT specify a
+          `flipKey` property on `Flipper`, then it will animate the transition between `Flip`
+          components when they mount/unmount.
+        </Markdown>
+
+        <Code className="mb-4">
+          {require('src/markdown/OnMountUnmountExample.md')}
+        </Code>
+
+
+        <OnMountUnmount />
+
+      </section>
     </div>
   )
 }
