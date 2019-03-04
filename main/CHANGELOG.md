@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/morgs32/react-spring-flip/compare/react-spring-flip@1.5.0...react-spring-flip@1.5.1) (2019-03-04)
+
+
+### Bug Fixes
+
+* add @morgs32/react-spring as peerDep ([6490864](https://github.com/morgs32/react-spring-flip/commit/6490864))
+
+
+
+
+
 # [1.5.0](https://github.com/morgs32/react-spring-flip/compare/react-spring-flip@1.4.2...react-spring-flip@1.5.0) (2019-03-04)
 
 

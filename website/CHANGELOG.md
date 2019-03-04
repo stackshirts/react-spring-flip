@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/morgs32/react-spring-flip/compare/website@1.4.0...website@1.4.1) (2019-03-04)
+
+
+### Bug Fixes
+
+* add @morgs32/react-spring as peerDep ([6490864](https://github.com/morgs32/react-spring-flip/commit/6490864))
+
+
+
+
+
 # [1.4.0](https://github.com/morgs32/react-spring-flip/compare/website@1.3.2...website@1.4.0) (2019-03-04)
 
 

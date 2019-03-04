@@ -1,6 +1,6 @@
 {
   "name": "react-spring-flip",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "",
   "main": "lib",
   "scripts": {
@@ -9,7 +9,6 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
@@ -32,8 +31,8 @@
     "react-dom": "^16.8.3"
   },
   "peerDependencies": {
+    "@morgs32/react-spring": "^8.0.10",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "@morgs32/react-spring": "^8.0.10"
+    "react-dom": "^16.8.1"
   }
 }
