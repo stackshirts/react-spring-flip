@@ -26,9 +26,7 @@
     "jest": "^22.4.3",
     "jest-enzyme": "^4.0.1",
     "nps": "^5.9.3",
-    "nps-utils": "^1.7.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "nps-utils": "^1.7.0"
   },
   "peerDependencies": {
     "@morgs32/react-spring": "^8.0.10",
