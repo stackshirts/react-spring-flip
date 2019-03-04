@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Just the website for this library",
   "scripts": {
     "dev": "next -p 3031",
@@ -28,7 +28,7 @@
     "react-markdown": "^4.0.6",
     "react-merge-metrics": "^0.3.0",
     "react-refractor": "^1.0.1",
-    "react-spring-flip": "^1.5.1",
+    "react-spring-flip": "^1.5.2",
     "refractor": "^2.6.2",
     "uuid": "^3.3.2"
   },
