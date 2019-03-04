@@ -1,11 +1,17 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import Markdown from 'src/components/Markdown'
 import Code from 'src/components/Code'
 import PageView from 'react-merge-metrics/lib/PageView'
 import _shuffle from 'lodash/shuffle'
-import UsingFlipKey from 'src/components/UsingFlipKey'
-import OnMountUnmount from 'src/components/OnMountUnmount'
+import dynamic from 'next/dynamic'
+
+const UsingFlipKey = dynamic(() => import('src/components/UsingFlipKey'), {
+  ssr: false
+})
+const OnMountUnmount = dynamic(() => import('src/components/OnMountUnmount'), {
+  ssr: false
+})
 
 Index.propTypes = {}
 Index.defaultProps = {}
@@ -42,9 +48,6 @@ export default function Index(props) {
   return (
     <div>
 
-      <PageView
-        name="Index"
-      />
 
       <h1 className="display-3 mb-3">
         React spring flip

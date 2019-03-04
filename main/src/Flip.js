@@ -5,20 +5,19 @@ import React, {
   useRef,
   useEffect,
   createContext,
+  useMemo,
   useState
 } from 'react'
 import PropTypes from 'prop-types'
 import { FlipperContext } from './Flipper'
-import { useSpring, animated, config } from 'react-spring'
-
-export const FlipContext = createContext()
+import { useSpring, animated, config } from '@morgs32/react-spring'
 
 export default React.forwardRef(Flip)
 
 Flip.propTypes = {}
 Flip.defaultProps = {}
 
-function Flip(props, ref) {
+function Flip(props, _ref) {
 
   const {
     flipId,
@@ -33,9 +32,9 @@ function Flip(props, ref) {
 
   const context = useContext(FlipperContext)
 
-  const ownRef = useRef()
+  const ownRef = useRef({})
 
-  const flipRef = ref || useRef()
+  const flipRef = useRef()
 
   const [isAnimating, setAnimating] = useState(0)
 
@@ -96,27 +95,33 @@ function Flip(props, ref) {
         immediate: true,
       })
       setAnimating(1)
-      ownRef.current = {
+      Object.assign(ownRef.current, {
         prevBounds,
         nextBounds,
-      }
-    }
-
-    if (context.flipKey !== void 0) {
-      const prevBounds = flipRef.current.getBoundingClientRect()
-      context.register(flipId, prevBounds)
+      })
     }
 
     return () => {
-      if (flipRef.current) {
+      if (context.flipKey === void 0) {
         const prevBounds = flipRef.current.getBoundingClientRect()
         context.register(flipId, prevBounds)
       }
     }
+
   }, [context.flipKey])
 
+  if (context.flipKey && ownRef.current.flipKey !== context.flipKey) {
+    const prevBounds = flipRef.current.getBoundingClientRect()
+    context.register(flipId, prevBounds)
+    ownRef.current.flipKey = context.flipKey
+  }
+
   useEffect(() => {
-    if (!context.debug && ownRef.current) {
+    // if (context.debug) {
+    //   console.log(ownRef.current)
+    // }
+
+    if (!context.debug && ownRef.current.nextBounds) {
       const {
         width,
         height,
@@ -169,7 +174,12 @@ function Flip(props, ref) {
    */
   return (
     <Animated
-      ref={flipRef}
+      ref={(ref) => {
+        flipRef.current = ref
+        if (_ref) {
+          _ref.current = ref
+        }
+      }}
       style={{
         ...style,
         ...animatedStyle,

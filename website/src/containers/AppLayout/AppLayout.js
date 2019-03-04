@@ -10,34 +10,21 @@ Refractor.registerLanguage(js)
 
 export default function AppLayout({ children }) {
 
-  return (
-    <MetricsProvider
-      analytics={{
-        track: ({ name, properties }) => {
-          console.log('Tracked:', name, properties)
-        },
-        page: ({ name, properties, category }) => {
-          console.log('Page viewed:', name, properties)
-        }
-      }}
-      properties={{
-        version: packageJson.version,
-      }}
-    >
-      <div className="container my-5 py-4">
-        <div className="row">
-          <div className="col-12 col-md-3 bd-sidebar">
-            <Sidebar />
-          </div>
 
-          <main
-            className="col-12 col-md-9 col-xl-8 pt-5 pb-3 pl-md-5 bd-content"
-            role="main"
-          >
-            {children}
-          </main>
+  return (
+    <div className="container my-5 py-4">
+      <div className="row">
+        <div className="col-12 col-md-3 bd-sidebar">
+          <Sidebar />
         </div>
+
+        <main
+          className="col-12 col-md-9 col-xl-8 pt-5 pb-3 pl-md-5 bd-content"
+          role="main"
+        >
+          {children}
+        </main>
       </div>
-    </MetricsProvider>
+    </div>
   )
 }

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "ci:publish": "now",
-    "alias": "now alias react-merge-metrics"
+    "alias": "now alias react-spring-flip"
   },
   "private": true,
   "author": "",

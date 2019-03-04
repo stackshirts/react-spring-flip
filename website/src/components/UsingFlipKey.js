@@ -58,7 +58,7 @@ export default function Index(props) {
               <Flip
                 positionOnly
                 flipId={card.id}
-                key={card.background}
+                key={card.id}
                 className="col-6 mb-2"
               >
                 <div className="card">
