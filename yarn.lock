@@ -1751,6 +1751,13 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
+"@morgs32/react-spring@^8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@morgs32/react-spring/-/react-spring-8.0.10.tgz#28252cdc6c8c4cd1a8a0082b06f324d4581dbbc0"
+  integrity sha512-TTcDnWNtHGbpfu4IHvT5Tlef2Pfu8880i4gdH1b1mulPWSFH0+PQ2nUFLV1MucyD55iidqZOswEYris5BLlnEA==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -9755,13 +9762,6 @@ react-refractor@^1.0.1:
     babel-preset-env "^1.6.1"
     prop-types "^15.6.1"
     refractor "^2.3.0"
-
-react-spring@^8.0.8:
-  version "8.0.8"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.8.tgz#67b81f0f2d28923a15b6ce99f7eb50c93fe16e39"
-  integrity sha512-nXLFizNgGNZzrSTkpBn2yiDNnQ3HH9K256LThAzp67eh9aCzDtbzSnXrrO2VCrO6bGBJuxi8Dj7M9XiLupSAZw==
-  dependencies:
-    "@babel/runtime" "^7.3.1"
 
 react@^16.4.0, react@^16.8.2, react@^16.8.3:
   version "16.8.3"

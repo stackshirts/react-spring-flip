@@ -9,9 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react-spring": "^8.0.8"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
@@ -24,6 +22,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@morgs32/react-spring": "^8.0.10",
     "babel-plugin-module-resolver": "^3.2.0",
     "jest": "^22.4.3",
     "jest-enzyme": "^4.0.1",
@@ -33,6 +32,8 @@
     "react-dom": "^16.8.3"
   },
   "peerDependencies": {
-    "react": "^16.8.1"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "@morgs32/react-spring": "^8.0.10"
   }
 }
