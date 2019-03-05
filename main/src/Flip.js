@@ -65,6 +65,8 @@ function Flip(props, _ref) {
      */
 
     if (prevBounds) {
+      flipRef.current.style.height = null
+      flipRef.current.style.width = null
       const nextBounds = flipRef.current.getBoundingClientRect()
 
       const x = nextBounds.x - prevBounds.x
@@ -110,16 +112,25 @@ function Flip(props, _ref) {
 
   }, [context.flipKey])
 
-  if (context.flipKey && ownRef.current.flipKey !== context.flipKey) {
+  if (
+    context.flipKey
+    && ownRef.current.flipKey !== context.flipKey
+    && flipRef.current
+  ) {
     const prevBounds = flipRef.current.getBoundingClientRect()
     context.register(flipId, prevBounds)
     ownRef.current.flipKey = context.flipKey
+    ownRef.current.newKey = true
+  }
+  else {
+    ownRef.current.newKey = false
   }
 
   useEffect(() => {
     // if (context.debug) {
     //   console.log(ownRef.current)
     // }
+
 
     if (!context.debug && ownRef.current.nextBounds) {
       const {
@@ -157,9 +168,11 @@ function Flip(props, _ref) {
   const both = !dimensionsOnly && !positionOnly
 
   if (isAnimating) {
-    if (both || dimensionsOnly) {
-      animatedStyle.width = (dimensionsSpring && dimensionsSpring.width || width).interpolate(Math.round)
-      animatedStyle.height = (dimensionsSpring && dimensionsSpring.height || height).interpolate(Math.round)
+    if ((both || dimensionsOnly) && !ownRef.current.newKey) {
+      const animatedWidth = dimensionsSpring ? dimensionsSpring.width : width
+      animatedStyle.width = animatedWidth.interpolate(Math.round)
+      const animatedHeight = dimensionsSpring && dimensionsSpring.height || height
+      animatedStyle.height = animatedHeight.interpolate(Math.round)
     }
     if (both || positionOnly) {
       animatedStyle.transformOrigin = 'top left'

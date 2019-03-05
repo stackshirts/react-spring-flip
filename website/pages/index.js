@@ -1,49 +1,22 @@
-import React, { useState, useCallback, useLayoutEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Markdown from 'src/components/Markdown'
 import Code from 'src/components/Code'
-import PageView from 'react-merge-metrics/lib/PageView'
-import _shuffle from 'lodash/shuffle'
 import dynamic from 'next/dynamic'
 
 const UsingFlipKey = dynamic(() => import('src/components/UsingFlipKey'), {
+  loading: () => <p>...</p>,
   ssr: false
 })
 const OnMountUnmount = dynamic(() => import('src/components/OnMountUnmount'), {
+  loading: () => <p>...</p>,
   ssr: false
 })
 
 Index.propTypes = {}
 Index.defaultProps = {}
 
-const cardsData = [
-  {
-    id: 0,
-    background: 'linear-gradient(-135deg, #FCE38A 0%, #F38181 100%)'
-  },
-  {
-    id: 1,
-    background: 'linear-gradient(-135deg, #43E695 0%, #3BB2B8 100%)'
-  },
-  {
-    id: 2,
-    background: 'linear-gradient(-135deg, #17EAD9 0%, #6078EA 100%)'
-  },
-  {
-    id: 3,
-    background: 'linear-gradient(44deg, #5E2563 0%, #65799B 100%)'
-  },
-]
-
 export default function Index(props) {
-
-  const [cards, setCards] = useState(cardsData)
-  const [flipCount, setCount] = useState(0)
-
-  const shuffleCards = useCallback(() => {
-    setCards(_shuffle(cardsData))
-    setCount(flipKey => flipKey + 1)
-  }, [])
 
   return (
     <div>
