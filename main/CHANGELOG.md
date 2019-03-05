@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/morgs32/react-spring-flip/compare/react-spring-flip@1.5.2...react-spring-flip@1.5.3) (2019-03-05)
+
+
+### Bug Fixes
+
+* remove height,width on flip ([7bff5d5](https://github.com/morgs32/react-spring-flip/commit/7bff5d5))
+
+
+
+
+
 ## [1.5.2](https://github.com/morgs32/react-spring-flip/compare/react-spring-flip@1.5.1...react-spring-flip@1.5.2) (2019-03-04)
 
 

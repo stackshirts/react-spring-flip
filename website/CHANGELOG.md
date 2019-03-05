@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/morgs32/react-spring-flip/compare/website@1.4.2...website@1.4.3) (2019-03-05)
+
+
+### Bug Fixes
+
+* fixes bad next.config.js ([d51ffff](https://github.com/morgs32/react-spring-flip/commit/d51ffff))
+* remove height,width on flip ([7bff5d5](https://github.com/morgs32/react-spring-flip/commit/7bff5d5))
+
+
+
+
+
 ## [1.4.2](https://github.com/morgs32/react-spring-flip/compare/website@1.4.1...website@1.4.2) (2019-03-04)
 
 **Note:** Version bump only for package website
