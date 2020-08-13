@@ -6,7 +6,7 @@ import { FlipperContext } from './Flipper'
 import { FlipElementBoundsType, FlipIdType } from './types';
 import { getBounds } from './utils';
 
-interface Props {
+interface Props extends React.HTMLProps<any> {
   flipId: FlipIdType;
   el?: string;
   style?: any;
@@ -24,8 +24,7 @@ const Flip: React.FC<Props> = (props) => {
     flipId,
     el = 'div',
     style = {},
-    className,
-    children,
+    ...otherProps
   } = props
 
   // const [position, setPosition] = positionSpring;
@@ -63,7 +62,7 @@ const Flip: React.FC<Props> = (props) => {
     const prevBounds = flipBounds[flipId]
     const flipNode = flipRef.current;
     const flipperNode = flipperEl.current;
-
+    
     // We only need to bother animating if we have prevBounds on this flipId
     // And flipperNode will not exist on first useLayoutEffect()
     if (prevBounds && flipNode && flipperNode) {
@@ -79,7 +78,6 @@ const Flip: React.FC<Props> = (props) => {
         offsetWidth,
         offsetHeight,
       } = prevBounds
-
 
       let initialStyle = getComputedStyle(flipNode).transform;
       initialStyle = initialStyle !== 'none' ? initialStyle : 'matrix(1, 0, 0, 1, 0, 0)'
@@ -152,14 +150,12 @@ const Flip: React.FC<Props> = (props) => {
     <Animated
       key={flipKey}
       ref={flipRef}
-      className={className}
+      {...otherProps}
       style={{
         ...style,
         ...animatedStyle,
       }}
-    >
-      {children}
-    </Animated>
+    />
   )
 }
 

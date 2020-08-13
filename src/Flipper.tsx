@@ -43,7 +43,7 @@ const Flipper: React.FC<Props> = (props) => {
 
     // Will this change before nested DOM unmounts?
     Object.keys(flipperRef.current.flipRefs).forEach((flipId) => {
-      if (flipKey) {
+      if (typeof flipKey !== 'undefined') {
         const flipRef = flipperRef.current.flipRefs[flipId];
         const bounds = getBounds(flipRef.current!, flipperEl.current!);
         if (bounds) {

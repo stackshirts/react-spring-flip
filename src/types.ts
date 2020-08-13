@@ -9,7 +9,7 @@ export interface FlipElementBoundsType {
   offsetWidth: number;
 }
 
-export type FlipKeyType = string | number | null | undefined;
+export type FlipKeyType = string | number | boolean | null | undefined;
 export type ContextType = {
   debug?: boolean;
   flipKey: FlipKeyType;
