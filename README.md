@@ -26,7 +26,7 @@ The `react-spring-flip` package provides easy FLIP animations in React using the
 ### Simple Example: An Expanding Div
 
 <a href="https://codesandbox.io/s/github/stackshirts/react-spring-flip/tree/master/examples/expanding-div">
-<img src="./example-assets/square.gif" height="200px" alt="animated square" />
+<img src="http://raw.githubusercontent.com/stackshirts/react-spring-flip/master/example-assets/square.gif" height="200px" alt="animated square" />
 </a>
 
 [Fork this example on Code Sandbox](https://codesandbox.io/s/github/stackshirts/react-spring-flip/tree/master/examples/expanding-div)
@@ -55,7 +55,7 @@ const AnimatedSquare = () => {
 ### Simple Example: Two Divs
 
 <a href="https://codesandbox.io/s/github/stackshirts/react-spring-flip/tree/master/examples/different-divs">
-<img src="./example-assets/2squares.gif" height="200px" alt="2 animated squares" />
+<img src="http://raw.githubusercontent.com/stackshirts/react-spring-flip/master/example-assets/2squares.gif" height="200px" alt="2 animated squares" />
 </a>
 
 [Fork this example on Code Sandbox](https://codesandbox.io/s/github/stackshirts/react-spring-flip/tree/master/examples/different-divs)
@@ -91,7 +91,7 @@ const AnimatedSquare = () => {
 ### Simple Example: List Shuffle
 
 <a href="https://codesandbox.io/s/github/stackshirts/react-spring-flip/tree/master/examples/list-shuffling">
-<img src="./example-assets/listshuffle.gif" height="60px" alt="shuffling a list" />
+<img src="http://raw.githubusercontent.com/stackshirts/react-spring-flip/master/example-assets/listshuffle.gif" height="60px" alt="shuffling a list" />
 </a>
 
 [Fork this example on Code Sandbox](https://codesandbox.io/s/github/stackshirts/react-spring-flip/tree/master/examples/list-shuffling)

@@ -2,7 +2,6 @@
   "name": "react-spring-flip-list-shuffling",
   "version": "1.0.0",
   "description": "",
-  "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
     "@types/jest": "^26.0.9",
