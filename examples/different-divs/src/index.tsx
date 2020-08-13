@@ -1,18 +1,22 @@
-import ReactDOM from "react-dom";
-import React, { useState } from "react";
-import { Flipper, Flipped } from "react-flip-toolkit";
-import "./styles.css";
+import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
+import { Flip, Flipper } from 'react-spring-flip';
+import './styles.css';
 
-const Square = ({ toggleFullScreen }) => (
-  <Flipped flipId="square">
-    <div className="square" onClick={toggleFullScreen} />
-  </Flipped>
+const Square = ({ toggleFullScreen }: { toggleFullScreen: any }) => (
+  <Flip flipId="square" className="square" onClick={toggleFullScreen}>
+    <div style={{ padding: 4 }}>
+      square
+    </div>
+  </Flip>
 );
 
-const FullScreenSquare = ({ toggleFullScreen }) => (
-  <Flipped flipId="square">
-    <div className="full-screen-square" onClick={toggleFullScreen} />
-  </Flipped>
+const FullScreenSquare = ({ toggleFullScreen }: { toggleFullScreen: any }) => (
+  <Flip flipId="square" className="full-screen-square" onClick={toggleFullScreen}>
+    <div style={{ padding: 4 }}>
+      full-screen-square
+    </div>
+  </Flip>
 );
 
 const AnimatedSquare = () => {
@@ -30,4 +34,4 @@ const AnimatedSquare = () => {
   );
 };
 
-ReactDOM.render(<AnimatedSquare />, document.querySelector("#root"));
+ReactDOM.render(<AnimatedSquare />, document.querySelector('#root'));

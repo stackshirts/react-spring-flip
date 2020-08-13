@@ -15,7 +15,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.3",
     "react-spring": "^8.0.27",
-    "react-spring-flip": "^1.5.4-canary.1",
+    "react-spring-flip": "latest",
     "typescript": "^3.9.7"
   },
   "devDependencies": {},
