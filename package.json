@@ -1,6 +1,6 @@
 {
   "name": "react-spring-flip",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "React library for doing FLIP animations using react-spring",
   "main": "./dist/index.js",
   "module": "./esm/index.js",
