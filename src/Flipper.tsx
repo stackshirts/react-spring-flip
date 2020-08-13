@@ -1,49 +1,6 @@
-import React, { createContext, RefObject, useEffect, useMemo, useRef } from 'react'
-
-export const getBounds = (flipNode: HTMLElement, flipperNode: HTMLElement): FlipElementBoundsType => {
-  let el = flipNode;
-  let offsetLeft = 0;
-  let offsetTop = 0;
-  let offsetHeight = el.offsetHeight;
-  let offsetWidth = el.offsetWidth;
-
-  while (el && el !== flipperNode) {
-    offsetLeft += el.offsetLeft;
-    offsetTop += el.offsetTop;
-    el = el.offsetParent as HTMLElement;
-  }
-  // if (!el) {
-  //   return;
-  // }
-  return {
-    offsetLeft,
-    offsetTop,
-    offsetHeight,
-    offsetWidth,
-  }
-}
-
-export interface FlipElementBoundsType {
-  offsetTop: number;
-  offsetLeft: number;
-  offsetHeight: number;
-  offsetWidth: number;
-}
-
-type FlipKeyType = string | number | null | undefined;
-
-type ContextType = {
-  debug?: boolean;
-  flipKey: FlipKeyType;
-  flipRefs: {
-    [flipIds: string]: RefObject<HTMLElement>
-  };
-  flipBounds: {
-    [flipIds: string]: FlipElementBoundsType;
-  }
-  register: (flipId: string, flipEl: RefObject<HTMLElement>) => void;
-  flipperEl: RefObject<HTMLElement>;
-}
+import React, { createContext, useEffect, useMemo, useRef } from 'react'
+import { ContextType, FlipIdType, FlipKeyType } from './types';
+import { getBounds } from './utils';
 
 export const FlipperContext = createContext<ContextType>({} as ContextType)
 
@@ -66,7 +23,7 @@ const Flipper: React.FC<Props> = (props) => {
     flipperEl,
     flipRefs: {},
     flipBounds: {},
-    register: (flipId: string, flipRef) => {
+    register: (flipId: FlipIdType, flipRef) => {
       if (flipperRef.current.flipRefs[flipId]) {
         console.log('flipperRef.current.flipRefs', flipperRef.current.flipRefs);
         const e = new Error('You cannot have two Flip components with the same flipId under the same Flipper component');

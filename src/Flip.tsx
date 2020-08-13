@@ -2,10 +2,12 @@ import * as Rematrix from 'rematrix'
 import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { animated, useSpring } from 'react-spring'
 
-import { FlipElementBoundsType, FlipperContext, getBounds } from './Flipper'
+import { FlipperContext } from './Flipper'
+import { FlipElementBoundsType, FlipIdType } from './types';
+import { getBounds } from './utils';
 
 interface Props {
-  flipId: string;
+  flipId: FlipIdType;
   el?: string;
   style?: any;
   className?: string;
@@ -23,6 +25,7 @@ const Flip: React.FC<Props> = (props) => {
     el = 'div',
     style = {},
     className,
+    children,
   } = props
 
   // const [position, setPosition] = positionSpring;
@@ -123,19 +126,17 @@ const Flip: React.FC<Props> = (props) => {
     register(flipId, flipRef)
 
     if (!debug) {
+
       if (!stateRef.current.nextBounds) {
         return;
       }
-      const {
-        nextMatrix,
-      } = stateRef.current
 
       setSpring({
-        matrix: nextMatrix,
+        matrix: stateRef.current.nextMatrix,
         immediate: false,
       })
     }
-  }, [register, flipId, debug, setSpring])
+  }, [register, flipId, debug, setSpring, flipKey])
 
   const Animated = (animated as any)[el]
 
@@ -143,7 +144,7 @@ const Flip: React.FC<Props> = (props) => {
   if (isAnimating) {
     animatedStyle = {
       // @ts-ignore
-      transform: matrix.to((...vals: number[]) => `matrix(${vals.join(', ')})`),
+      transform: matrix.interpolate((...vals: number[]) => `matrix(${vals.join(', ')})`),
     }
   }
 
@@ -156,7 +157,9 @@ const Flip: React.FC<Props> = (props) => {
         ...style,
         ...animatedStyle,
       }}
-    />
+    >
+      {children}
+    </Animated>
   )
 }
 
