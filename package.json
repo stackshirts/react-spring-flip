@@ -1,6 +1,6 @@
 {
   "name": "react-spring-flip",
-  "version": "1.5.4-canary.0",
+  "version": "1.5.4-canary.1",
   "description": "React library for doing FLIP animations using react-spring",
   "main": "./dist/index.js",
   "module": "./esm/index.js",
